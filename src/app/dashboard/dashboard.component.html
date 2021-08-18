@@ -1,0 +1,59 @@
+
+<mat-toolbar color="primary" class="navbar" class="mat-elevation-z8">
+  <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <span>Navbar</span>
+    
+   
+    <div class="navbar"></div>
+        <a mat-button  color="basic" [routerLink]="['homeIn']"
+        (click)="homeIn();" routerLinkActive="active"><mat-icon>home</mat-icon></a>
+
+        <a mat-button color="basic" [routerLink]="['aboutUs']"
+        (click)="aboutUs();" routerLinkActive="active"><mat-icon>info</mat-icon></a>
+
+        <a mat-button color="basic" [routerLink]="['servicesIs']"
+        (click)="servicesIs();" ruterLinkActive="active"><mat-icon>phone_in_talk</mat-icon></a>
+
+        <a mat-button  color="basic" 
+         routerLinkActive="active"><mat-icon>email</mat-icon></a>
+
+        <a mat-button  color="basic" 
+         routerLinkActive="active"><mat-icon>person</mat-icon></a>
+
+        <a mat-raised-button color="warn" [routerLink]="['/reactive-form']"
+        (click)="signUp();" routerLinkActive="active">Signup</a >
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav [(opened)]="opened" mode="push" (opened)="log('Opened')" (closed)="log('Closed')">
+      <mat-nav-list>
+        <a mat-button  color="basic" [routerLink]="['/homeIn']"
+        (click)="homeIn();" routerLinkActive="active"><mat-icon>home</mat-icon> Home</a>
+<br><hr>
+        <a mat-button  color="basic" [routerLink]="['scheduleUs']"
+        (click)="scheduleUs();" routerLinkActive="active"><mat-icon>reorder</mat-icon> Schedule</a>
+         <br><hr>
+         <a mat-button  color="basic" [routerLink]="['coursesIn']"
+         (click)="coursesIn();" routerLinkActive="active"><mat-icon>perm_media</mat-icon> Courses</a>
+         <br><hr>
+         <a mat-button  color="basic" 
+         routerLinkActive="active"><mat-icon>chat</mat-icon> Message</a>
+         <br><hr>
+         <a mat-button  color="basic" 
+         routerLinkActive="active"><mat-icon>call</mat-icon> Contact Us</a>
+         <br><hr>
+         <a mat-button  color="basic" 
+         routerLinkActive="active"><mat-icon>arrow_forward</mat-icon>sign out</a>
+      
+        <!--<a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>-->
+        
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!--<button (click)="opened=!opened">ToggleOpened</button>
+      <button (click)="sidenav.open()">Open</button>
+      <button (click)="sidenav.close()">Close</button>
+      <button (click)="sidenav.toggle()">Toggle</button>-->
+  
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
